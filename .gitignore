@@ -1,0 +1,13 @@
+# Dependências (pasta pesada que o Render instala sozinho)
+node_modules/
+
+# Variáveis de ambiente (Onde fica sua senha do MongoDB!)
+.env
+
+# Logs e arquivos de depuração
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Pasta de build (se você usa TypeScript)
+dist/
