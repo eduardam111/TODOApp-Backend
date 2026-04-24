@@ -17,8 +17,10 @@ app.listen(PORT, () => {
 console.log(`Server Started at ${PORT}`)
 })
 // Obtendo os parametros passados pela linha de comando
-var userArgs = process.argv.slice(2);
-var mongoURL = userArgs[0];
+const mongoURL = process.env.MONGO_URI || process.argv[2];
+if (!mongoURL) {
+  console.error("ERRO: Nenhuma URL do MongoDB foi fornecida!");
+}
 //Configurando a conexao com o Banco de Dados
 var mongoose = require('mongoose');
 mongoose.connect(mongoURL);
